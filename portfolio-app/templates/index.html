@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My DevOps Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+
+  <nav>
+    <span class="logo">Chisom Johnson</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h1>Hi, I'm <span class="highlight">Chisom Johnson</span></h1>
+    <p class="tagline">DevOps Engineer · Cloud Enthusiast · Problem Solver</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I'm a DevOps engineer passionate about automating everything — from
+    infrastructure provisioning to CI/CD pipelines. I work with AWS, Docker,
+    Kubernetes, Terraform, and Ansible to build reliable, scalable systems.</p>
+  </section>
+
+  <section id="skills" class="section alt">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">Docker</div>
+      <div class="skill-card">Kubernetes</div>
+      <div class="skill-card">Terraform</div>
+      <div class="skill-card">Ansible</div>
+      <div class="skill-card">GitHub Actions</div>
+      <div class="skill-card">AWS</div>
+      <div class="skill-card">Linux</div>
+      <div class="skill-card">Python</div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>End-to-End DevOps Pipeline</h3>
+        <p>Deployed two applications to AWS using a fully automated CI/CD
+        pipeline — GitHub Actions, Terraform, Ansible, Docker, and Kubernetes.</p>
+        <div class="tags">
+          <span>Terraform</span><span>Ansible</span>
+          <span>Docker</span><span>AWS EKS</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Infrastructure as Code</h3>
+        <p>Provisioned a complete AWS environment — VPC, EC2, subnets, and
+        security groups — using Terraform with remote state in S3.</p>
+        <div class="tags">
+          <span>Terraform</span><span>AWS</span><span>VPC</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>CI/CD Automation</h3>
+        <p>Built a GitHub Actions pipeline that automatically builds, tests,
+        containerises, and deploys on every push to main.</p>
+        <div class="tags">
+          <span>GitHub Actions</span><span>Docker</span><span>ECR</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section alt">
+    <h2>Contact</h2>
+    <p>Open to remote DevOps roles and collaborations.</p>
+    <p>
+      Email: <a href="mailto:chijohnson4greatness@gmail.com">chijohnson4greatness@gmail.com</a> &nbsp;|&nbsp;
+      GitHub: <a href="https://github.com/Cj4greatness" target="_blank">Cj4greatness</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>Built and deployed with Docker · Terraform · Ansible · GitHub Actions</p>
+  </footer>
+
+</body>
+</html>
