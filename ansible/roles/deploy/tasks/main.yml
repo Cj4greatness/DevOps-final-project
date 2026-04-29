@@ -7,19 +7,22 @@
     group: ubuntu
     mode: '0755'
 
-- name: Copy portfolio app
-  copy:
+- name: Copy portfolio app (skip venv)
+  synchronize:
     src: "{{ playbook_dir }}/../portfolio-app/"
     dest: /home/ubuntu/devops-app/portfolio-app/
-    owner: ubuntu
-    group: ubuntu
+    rsync_opts:
+      - "--exclude=venv/"
+      - "--exclude=__pycache__/"
+      - "--exclude=*.pyc"
 
-- name: Copy java app
-  copy:
+- name: Copy java app (skip target)
+  synchronize:
     src: "{{ playbook_dir }}/../java-app/"
     dest: /home/ubuntu/devops-app/java-app/
-    owner: ubuntu
-    group: ubuntu
+    rsync_opts:
+      - "--exclude=target/"
+      - "--exclude=.git/"
 
 - name: Copy docker-compose file
   copy:
@@ -34,16 +37,16 @@
     docker compose up --build -d
   become: yes
 
-- name: Wait for portfolio app to start
+- name: Wait for portfolio app
   wait_for:
     host: localhost
     port: 80
     delay: 10
-    timeout: 120
+    timeout: 180
 
-- name: Wait for java app to start
+- name: Wait for java app
   wait_for:
     host: localhost
     port: 8080
     delay: 10
-    timeout: 120
+    timeout: 180
