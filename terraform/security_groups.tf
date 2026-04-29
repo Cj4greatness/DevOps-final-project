@@ -1,18 +1,16 @@
 resource "aws_security_group" "app_server" {
   name        = "${var.project_name}-sg"
-  description = "Allow web and SSH traffic"
+  description = "Allow web and SSH"
   vpc_id      = aws_vpc.main.id
 
   ingress {
-    description = "SSH from my IP only"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["${var.my_ip}/32"]
+    cidr_blocks = [var.my_ip]
   }
 
   ingress {
-    description = "Portfolio app"
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
@@ -20,7 +18,6 @@ resource "aws_security_group" "app_server" {
   }
 
   ingress {
-    description = "Java app"
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
@@ -34,7 +31,5 @@ resource "aws_security_group" "app_server" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = {
-    Name = "${var.project_name}-sg"
-  }
+  tags = { Name = "${var.project_name}-sg" }
 }
