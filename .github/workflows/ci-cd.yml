@@ -47,8 +47,9 @@ jobs:
 
       - name: Write SSH key
         run: |
-          echo "${{ secrets.EC2_SSH_KEY }}" > /tmp/chisom-key.pem
+          printf '%s' "${{ secrets.EC2_SSH_KEY }}" > /tmp/chisom-key.pem
           chmod 400 /tmp/chisom-key.pem
+          head -1 /tmp/chisom-key.pem
 
       - name: Write inventory
         run: |
@@ -82,5 +83,7 @@ jobs:
 
       - name: Print URLs
         run: |
+          echo "================================"
           echo "Portfolio: http://${{ secrets.EC2_HOST }}:80"
           echo "Java App:  http://${{ secrets.EC2_HOST }}:8080"
+          echo "================================"
