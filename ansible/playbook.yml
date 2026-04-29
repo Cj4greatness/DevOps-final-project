@@ -1,0 +1,18 @@
+---
+- name: Configure server and deploy both apps
+  hosts: app_servers
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - role: common
+    - role: docker
+    - role: deploy
+
+  post_tasks:
+    - name: Show deployment URLs
+      debug:
+        msg:
+          - "DEPLOYMENT COMPLETE!"
+          - "Portfolio: http://{{ ansible_host }}:80"
+          - "Java App:  http://{{ ansible_host }}:8080"

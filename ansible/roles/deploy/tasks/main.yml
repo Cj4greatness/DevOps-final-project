@@ -1,0 +1,49 @@
+---
+- name: Create project directory
+  file:
+    path: /home/ubuntu/devops-app
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: '0755'
+
+- name: Copy portfolio app
+  copy:
+    src: "{{ playbook_dir }}/../portfolio-app/"
+    dest: /home/ubuntu/devops-app/portfolio-app/
+    owner: ubuntu
+    group: ubuntu
+
+- name: Copy java app
+  copy:
+    src: "{{ playbook_dir }}/../java-app/"
+    dest: /home/ubuntu/devops-app/java-app/
+    owner: ubuntu
+    group: ubuntu
+
+- name: Copy docker-compose file
+  copy:
+    src: "{{ playbook_dir }}/../docker-compose.yml"
+    dest: /home/ubuntu/devops-app/docker-compose.yml
+    owner: ubuntu
+    group: ubuntu
+
+- name: Build and start both apps
+  shell: |
+    cd /home/ubuntu/devops-app
+    docker compose up --build -d
+  become: yes
+
+- name: Wait for portfolio app to start
+  wait_for:
+    host: localhost
+    port: 80
+    delay: 10
+    timeout: 120
+
+- name: Wait for java app to start
+  wait_for:
+    host: localhost
+    port: 8080
+    delay: 10
+    timeout: 120
