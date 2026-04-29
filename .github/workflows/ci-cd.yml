@@ -85,7 +85,7 @@ jobs:
       - name: Terraform Apply
         working-directory: ./terraform
         env:
-          TF_VAR_key_name: chisom-key
+          TF_VAR_key_name: Chisom-key
           TF_VAR_my_ip: "0.0.0.0/0"
         run: terraform apply -auto-approve
 
@@ -111,7 +111,7 @@ jobs:
       - name: Write SSH private key
         run: |
           echo "${{ secrets.EC2_SSH_KEY }}" > /tmp/chisom-key.pem
-          chmod 400 /tmp/chisom-key.pem
+          chmod 400 /tmp/Chisom-key.pem
 
       - name: Write Ansible inventory
         run: |
@@ -128,7 +128,7 @@ jobs:
         run: |
           for i in {1..20}; do
             ssh -o StrictHostKeyChecking=no \
-                -i /tmp/chisom-key.pem \
+                -i /tmp/Chisom-key.pem \
                 ubuntu@${{ secrets.EC2_HOST }} \
                 'echo ready' && break
             echo "Attempt $i — waiting 15s..."
