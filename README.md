@@ -19,3 +19,13 @@ git clone https://github.com/Cj4greatness/DevOps-final-project.git
 cd DevOps-final-project
 docker compose up --build
 ```
+
+## Kubernetes (Bonus)
+Kubernetes manifests are included in the `k8s/` folder for deployment to a cluster.
+
+### Deploy to Kubernetes
+```bash
+kubectl apply -f k8s/
+kubectl get pods
+kubectl get services
+```
