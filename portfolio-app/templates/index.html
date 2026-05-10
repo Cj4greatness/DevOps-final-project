@@ -3,90 +3,384 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My DevOps Portfolio</title>
+  <title>Chisom Johnson | DevOps Engineer</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-  <nav>
-    <span class="logo">Chisom Johnson</span>
-    <ul>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-brand">CJ<span>.</span></div>
+    <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact" class="nav-cta">Hire Me</a></li>
     </ul>
   </nav>
 
+  <!-- HERO -->
   <section class="hero">
-    <h1>Hi, I'm <span class="highlight">Chisom Johnson</span></h1>
-    <p class="tagline">DevOps Engineer · Cloud Enthusiast · Problem Solver</p>
-    <a href="#projects" class="btn">View My Work</a>
-  </section>
-
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>I'm a DevOps engineer passionate about automating everything — from
-    infrastructure provisioning to CI/CD pipelines. I work with AWS, Docker,
-    Kubernetes, Terraform, and Ansible to build reliable, scalable systems.</p>
-  </section>
-
-  <section id="skills" class="section alt">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">Docker</div>
-      <div class="skill-card">Kubernetes</div>
-      <div class="skill-card">Terraform</div>
-      <div class="skill-card">Ansible</div>
-      <div class="skill-card">GitHub Actions</div>
-      <div class="skill-card">AWS</div>
-      <div class="skill-card">Linux</div>
-      <div class="skill-card">Python</div>
+    <div class="hero-content">
+      <p class="hero-greeting">👋 Hello, I'm</p>
+      <h1 class="hero-name">Chisom Johnson</h1>
+      <h2 class="hero-title">DevOps Engineer & Cloud Specialist</h2>
+      <p class="hero-desc">
+        I build automated pipelines, provision cloud infrastructure,
+        and deploy containerized applications at scale.
+        Passionate about making deployments fast, reliable and repeatable.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-secondary">Contact Me</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">8+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Tools Mastered</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Automated</span>
+        </div>
+      </div>
     </div>
-  </section>
-
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>End-to-End DevOps Pipeline</h3>
-        <p>Deployed two applications to AWS using a fully automated CI/CD
-        pipeline — GitHub Actions, Terraform, Ansible, Docker, and Kubernetes.</p>
-        <div class="tags">
-          <span>Terraform</span><span>Ansible</span>
-          <span>Docker</span><span>AWS EKS</span>
+    <div class="hero-visual">
+      <div class="code-card">
+        <div class="code-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="code-title">pipeline.yml</span>
         </div>
-      </div>
-      <div class="project-card">
-        <h3>Infrastructure as Code</h3>
-        <p>Provisioned a complete AWS environment — VPC, EC2, subnets, and
-        security groups — using Terraform with remote state in S3.</p>
-        <div class="tags">
-          <span>Terraform</span><span>AWS</span><span>VPC</span>
-        </div>
-      </div>
-      <div class="project-card">
-        <h3>CI/CD Automation</h3>
-        <p>Built a GitHub Actions pipeline that automatically builds, tests,
-        containerises, and deploys on every push to main.</p>
-        <div class="tags">
-          <span>GitHub Actions</span><span>Docker</span><span>ECR</span>
+        <div class="code-body">
+          <p><span class="c-purple">on:</span> <span class="c-green">push</span></p>
+          <p><span class="c-purple">jobs:</span></p>
+          <p>&nbsp;&nbsp;<span class="c-blue">build:</span></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-yellow">✓</span> Maven build</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-yellow">✓</span> Docker image</p>
+          <p>&nbsp;&nbsp;<span class="c-blue">deploy:</span></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-yellow">✓</span> Terraform apply</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-yellow">✓</span> Ansible deploy</p>
+          <p>&nbsp;&nbsp;<span class="c-blue">verify:</span></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-green">✓ All systems live!</span></p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section alt">
-    <h2>Contact</h2>
-    <p>Open to remote DevOps roles and collaborations.</p>
-    <p>
-      Email: <a href="mailto:chijohnson4greatness@gmail.com">chijohnson4greatness@gmail.com</a> &nbsp;|&nbsp;
-      GitHub: <a href="https://github.com/Cj4greatness" target="_blank">Cj4greatness</a>
-    </p>
+  <!-- ABOUT -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <h2 class="section-title">About <span>Me</span></h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a DevOps Engineer with hands-on experience building
+            end-to-end CI/CD pipelines, provisioning cloud infrastructure
+            with Terraform, and deploying containerized applications using
+            Docker and Kubernetes on AWS.
+          </p>
+          <p>
+            I believe in automating everything — from infrastructure
+            provisioning to deployment and monitoring. My goal is to
+            bridge the gap between development and operations, making
+            software delivery faster, more reliable and more secure.
+          </p>
+          <p>
+            Currently open to <strong>remote DevOps roles</strong> where
+            I can contribute to building robust, scalable infrastructure.
+          </p>
+          <div class="about-badges">
+            <span class="badge">☁️ AWS</span>
+            <span class="badge">🐳 Docker</span>
+            <span class="badge">⚙️ Kubernetes</span>
+            <span class="badge">🔧 Terraform</span>
+            <span class="badge">📦 Ansible</span>
+            <span class="badge">🔄 GitHub Actions</span>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="info-item">
+            <span class="info-label">📍 Location</span>
+            <span class="info-value">Nigeria (Remote Ready)</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">💼 Status</span>
+            <span class="info-value open">Open to Work</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">🎯 Focus</span>
+            <span class="info-value">DevOps & Cloud Engineering</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">🌍 Work Type</span>
+            <span class="info-value">Remote / Hybrid</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">📧 Email</span>
+            <span class="info-value">cj4greatness@gmail.com</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">💻 GitHub</span>
+            <span class="info-value">github.com/Cj4greatness</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <h2 class="section-title">Technical <span>Skills</span></h2>
+
+      <div class="skills-categories">
+
+        <div class="skill-category">
+          <h3>☁️ Cloud & Infrastructure</h3>
+          <div class="skill-tags">
+            <span>AWS EC2</span><span>AWS VPC</span>
+            <span>AWS S3</span><span>AWS IAM</span>
+            <span>AWS ECR</span><span>AWS EKS</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>🏗️ Infrastructure as Code</h3>
+          <div class="skill-tags">
+            <span>Terraform</span><span>AWS CloudFormation</span>
+            <span>Ansible</span><span>YAML</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>🐳 Containers & Orchestration</h3>
+          <div class="skill-tags">
+            <span>Docker</span><span>Docker Compose</span>
+            <span>Kubernetes</span><span>Helm</span>
+            <span>AWS EKS</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>🔄 CI/CD & Automation</h3>
+          <div class="skill-tags">
+            <span>GitHub Actions</span><span>Jenkins</span>
+            <span>Maven</span><span>Git</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>🖥️ Operating Systems & Scripting</h3>
+          <div class="skill-tags">
+            <span>Linux (Ubuntu)</span><span>Bash Scripting</span>
+            <span>Python</span><span>Shell</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>📊 Monitoring & Security</h3>
+          <div class="skill-tags">
+            <span>CloudWatch</span><span>UFW Firewall</span>
+            <span>SSH Hardening</span><span>Grafana</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <h2 class="section-title">Featured <span>Projects</span></h2>
+      <div class="projects-grid">
+
+        <div class="project-card featured">
+          <div class="project-badge">⭐ Featured</div>
+          <h3>End-to-End DevOps Pipeline</h3>
+          <p>
+            Built a complete CI/CD pipeline deploying two applications
+            (Portfolio + Java Spring Boot) to AWS EC2 using GitHub Actions,
+            Terraform, Ansible, and Docker Compose.
+          </p>
+          <div class="project-tech">
+            <span>GitHub Actions</span><span>Terraform</span>
+            <span>Ansible</span><span>Docker</span>
+            <span>AWS EC2</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Cj4greatness/DevOps-final-project" target="_blank">📁 GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Infrastructure as Code — AWS</h3>
+          <p>
+            Provisioned a complete AWS environment including VPC,
+            public subnets, security groups, and EC2 instances
+            using Terraform modules.
+          </p>
+          <div class="project-tech">
+            <span>Terraform</span><span>AWS VPC</span>
+            <span>EC2</span><span>Security Groups</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Cj4greatness/DevOps-final-project/tree/main/terraform" target="_blank">📁 GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Ansible Configuration Management</h3>
+          <p>
+            Automated server configuration and app deployment using
+            Ansible playbooks and roles — installing Docker,
+            deploying containers, zero manual steps.
+          </p>
+          <div class="project-tech">
+            <span>Ansible</span><span>Docker</span>
+            <span>Linux</span><span>YAML</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Cj4greatness/DevOps-final-project/tree/main/ansible" target="_blank">📁 GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Kubernetes Deployment Manifests</h3>
+          <p>
+            Wrote Kubernetes manifests for both applications including
+            Deployments, Services, Ingress controller, and ConfigMaps
+            for production-grade orchestration.
+          </p>
+          <div class="project-tech">
+            <span>Kubernetes</span><span>Docker</span>
+            <span>Ingress</span><span>ConfigMap</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Cj4greatness/DevOps-final-project/tree/main/k8s" target="_blank">📁 GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Linux Server Administration</h3>
+          <p>
+            Practiced real-world Linux admin tasks — user management,
+            process monitoring, security hardening, firewall setup,
+            and automated health checks with bash scripts.
+          </p>
+          <div class="project-tech">
+            <span>Linux</span><span>Bash</span>
+            <span>UFW</span><span>Cron</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Cj4greatness/devops-internship" target="_blank">📁 GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Docker Advanced — Networks & Volumes</h3>
+          <p>
+            Deep dive into Docker networking, persistent volumes,
+            multi-stage builds, and container security.
+            Built a 3-service Docker Compose stack.
+          </p>
+          <div class="project-tech">
+            <span>Docker</span><span>Docker Compose</span>
+            <span>Networks</span><span>Volumes</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Cj4greatness/devops-internship" target="_blank">📁 GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section experience-section">
+    <div class="container">
+      <h2 class="section-title">My <span>Journey</span></h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>DevOps Internship Program</h3>
+            <span class="timeline-date">2026 — Present</span>
+            <p>Hands-on DevOps training covering Linux administration,
+            Docker, Kubernetes, Terraform, Ansible and CI/CD pipelines.
+            Building real projects deployed to AWS.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Final DevOps Project</h3>
+            <span class="timeline-date">April 2026</span>
+            <p>Designed and implemented a complete end-to-end DevOps
+            pipeline deploying two applications to AWS using
+            GitHub Actions, Terraform, Ansible and Docker.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Cloud & DevOps Training</h3>
+            <span class="timeline-date">2025 — 2026</span>
+            <p>Intensive training in AWS cloud services, containerization
+            with Docker and Kubernetes, Infrastructure as Code with
+            Terraform, and CI/CD automation.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+      <p class="contact-desc">
+        I'm actively looking for remote DevOps roles. If you have an
+        opportunity or just want to connect — reach out!
+      </p>
+      <div class="contact-cards">
+        <a href="mailto:cj4greatness@gmail.com" class="contact-card">
+          <span class="contact-icon">📧</span>
+          <span class="contact-label">Email</span>
+          <span class="contact-value">cj4greatness@gmail.com</span>
+        </a>
+        <a href="https://github.com/Cj4greatness" target="_blank" class="contact-card">
+          <span class="contact-icon">💻</span>
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">github.com/Cj4greatness</span>
+        </a>
+        <a href="https://linkedin.com/in/chisom-johnson" target="_blank" class="contact-card">
+          <span class="contact-icon">🔗</span>
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">linkedin.com/in/chisom-johnson</span>
+        </a>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>Built and deployed with Docker · Terraform · Ansible · GitHub Actions</p>
+    <p>Built & Deployed by Chisom Johnson · Docker · Terraform · Ansible · GitHub Actions · AWS</p>
+    <p style="margin-top:8px;font-size:0.8rem;">
+      🟢 Live on AWS EC2 · Automated CI/CD Pipeline
+    </p>
   </footer>
 
 </body>
