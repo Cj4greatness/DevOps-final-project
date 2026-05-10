@@ -1,4 +1,4 @@
-cat > ~/DevOps-final-project/README.md << 'EOF'
+
 # 🚀 DevOps Final Project — End-to-End CI/CD Pipeline
 
 <div align="center">
